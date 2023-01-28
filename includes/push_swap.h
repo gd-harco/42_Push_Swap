@@ -6,9 +6,10 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/27 12:22:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/28 17:14:05 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/includes/libft.h"
@@ -22,7 +23,7 @@ struct s_stack
 	size_t	index;
 	int		value;
 	t_stack	*next;
-};
+}			;
 
 void		parse_nb(t_stack **stack_a, int new_argc, char **argv);
 char		*ft_strjoin_piscine(int size, char **strs, char *sep);
@@ -34,5 +35,8 @@ bool		have_non_digit(char **to_check);
 long long	ft_atoll(const char *str);
 void		sa(t_stack **stack);
 void		sb(t_stack **stack);
+void		ss(t_stack **stack_a, t_stack **stack_b);
+void		pb(t_stack **stack_a, t_stack **stack_b);
+void		pa(t_stack **stack_a, t_stack **stack_b);
 
 #endif
