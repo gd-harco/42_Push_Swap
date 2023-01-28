@@ -12,15 +12,26 @@
 
 #include "numbers.h"
 
-static int	ft_overflow(int sign)
+static long	ft_overflow(int sign)
 {
 	if (sign < 0)
-		return ((int)LONG_MIN);
+		return (LONG_MIN);
 	else
-		return ((int)LONG_MAX);
+		return (LONG_MAX);
 }
 
-int	ft_atoi(const char *str)
+static bool	have_overflown(long result, char c)
+{
+	long	old;
+
+	old = result;
+	result = (result * 10) + (c - '0');
+	if (result < old)
+		return (true);
+	return (false);
+}
+
+long	ft_atoi(const char *str)
 {
 	long	result;
 	int		sign;
@@ -39,7 +50,7 @@ int	ft_atoi(const char *str)
 	}
 	while (ft_isdigit(*s))
 	{
-		if (result != (result * 10 + *s - '0') / 10)
+		if (have_overflown(result, *s))
 			return (ft_overflow(sign));
 		result = (result * 10) + (*s - '0');
 		s++;

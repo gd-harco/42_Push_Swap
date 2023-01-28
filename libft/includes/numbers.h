@@ -14,8 +14,9 @@
 # define NUMBERS_H
 # include <limits.h>
 # include <stdlib.h>
+# include <stdbool.h>
 # include "char.h"
 
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 char	*ft_itoa(int n);
 #endif

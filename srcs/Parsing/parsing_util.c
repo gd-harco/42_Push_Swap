@@ -15,10 +15,17 @@
 t_stack	*stack_new(size_t index, char *str)
 {
 	t_stack	*node;
+	long	overflow_check;
 
+	overflow_check = ft_atoi(str);
+	if (overflow_check > INT_MAX || overflow_check < INT_MIN)
+	{
+		ft_putstr_fd("Error\n", 2);
+		exit (1);
+	}
 	node = malloc(sizeof (t_stack));
 	node->index = index;
-	node->value = ft_atoi(str);
+	node->value = (int)overflow_check;
 	node->next = NULL;
 	return (node);
 }
@@ -43,4 +50,31 @@ void	stack_add_back(t_stack **stack, t_stack *new)
 	}
 	else
 		*stack = new;
+}
+
+long long	ft_atoll(const char *str)
+{
+	long long	result;
+	int			sign;
+
+	result = 0;
+	sign = 1;
+	if (str == NULL)
+		return (0);
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\r' || *str == '\f' || *str == '\v')
+		str++;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	while (*str >= '0' && *str++ <= '9')
+	{
+		result = result * 10 + *str - '0';
+		if (result != (result * 10 + *str - '0') / 10)
+			return (LONG_LONG_MAX);
+	}
+	return (result * sign);
 }

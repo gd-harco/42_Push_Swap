@@ -23,8 +23,8 @@ LIBFT            =   libft/libft.a
 HEADERS_LIST	=	push_swap.h
 
 SRCS_LIST		=	main.c	\
-					parsing/strjoin.c	parsing/parsing.c parsing/parsing_util.c	parsing/error_handling.c\
-
+					parsing/strjoin.c	parsing/parsing.c parsing/parsing_util.c	parsing/error_handling.c	\
+					actions/sa.c
 HEADERS			=	${HEADERS_LIST:%.h=${DIR_HEADERS}%.h}
 
 OBJS			=	${SRCS_LIST:%.c=${DIR_OBJS}%.o}
@@ -77,6 +77,7 @@ ${DIR_OBJS}%.o	:	${DIR_SRCS}%.c ${HEADERS}
 ${DIR_OBJS}		:
 					${MKDIR} ${DIR_OBJS}
 					${MKDIR} ${DIR_OBJS}/parsing
+					${MKDIR} ${DIR_OBJS}/actions
 					@echo "\033[0;32m [${NAME}/bin] : ✔️ Successfully created bin directory\033[1;36m ${DIR_OBJS} !\033[0;00m"
 
 # ---- Usual Rules ---- #
@@ -93,4 +94,3 @@ re				:	fclean all
 
 
 .PHONY:	all clean fclean re
-.SILENT:

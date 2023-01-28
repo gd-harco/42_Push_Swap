@@ -51,6 +51,20 @@ bool	have_duplicate(char **to_check)
 
 bool	have_non_digit(char **to_check)
 {
-	int	i;
+	size_t	index;
+	size_t	cur_char;
 
+	index = 0;
+	while (to_check[index])
+	{
+		cur_char = 0;
+		while (to_check[index][cur_char])
+		{
+			if (ft_isdigit(to_check[index][cur_char]) == 0)
+				return (true);
+			cur_char++;
+		}
+		index++;
+	}
+	return (false);
 }

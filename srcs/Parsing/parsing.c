@@ -25,7 +25,7 @@ void	parse_nb(t_stack **stack_a, int new_argc, char **argv)
 	temp_table = ft_split(temp, ' ');
 	free(temp);
 	item_nb = ft_array_length((void **)temp_table);
-	if (have_duplicate(temp_table))
+	if (have_duplicate(temp_table) || have_non_digit(temp_table))
 	{
 		ft_free_array((void **)temp_table);
 		ft_putstr_fd("Error\n", STDERR_FILENO);
@@ -35,7 +35,6 @@ void	parse_nb(t_stack **stack_a, int new_argc, char **argv)
 	ft_free_array((void **)temp_table);
 }
 
-//TODO : replace usage of ft_atoi with ft_atoll
 static void	fill_stack(t_stack **stack, size_t item_nb, char **table)
 {
 	size_t	i;
@@ -48,5 +47,4 @@ static void	fill_stack(t_stack **stack, size_t item_nb, char **table)
 		stack_add_back(stack, new_node);
 		i++;
 	}
-	ft_printf("prout");
 }
