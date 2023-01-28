@@ -33,5 +33,6 @@ bool		have_duplicate(char **to_check);
 bool		have_non_digit(char **to_check);
 long long	ft_atoll(const char *str);
 void		sa(t_stack **stack);
+void		sb(t_stack **stack);
 
 #endif
