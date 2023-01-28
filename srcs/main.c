@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/28 17:16:07 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/28 17:32:06 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,11 @@ int	main(int argc, char **argv)
 
 	(void )stack_b;
 	parse_nb(&stack_a, argc - 1, &argv[1]);
+	ft_printf("Stack A :\n ");
+	print_list(&stack_a);
+	ft_printf("Stack B :\n ");
+	print_list(&stack_b);
+	ra(&stack_a);
 	ft_printf("Stack A :\n ");
 	print_list(&stack_a);
 	ft_printf("Stack B :\n ");
