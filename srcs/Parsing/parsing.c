@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:13:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/27 15:13:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/28 18:02:38 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 static void	fill_stack(t_stack **stack, size_t item_nb, char **table);
 
-void	parse_nb(t_stack **stack_a, int new_argc, char **argv)
+void	parse_nb(t_push_swap *data, int new_argc, char **argv)
 {
 	char	*temp;
 	char	**temp_table;
 	size_t	item_nb;
 
-	*stack_a = NULL;
+	data->stack_a = NULL;
 	temp = ft_strjoin_piscine(new_argc, argv, " ");
 	temp_table = ft_split(temp, ' ');
 	free(temp);
@@ -31,7 +31,7 @@ void	parse_nb(t_stack **stack_a, int new_argc, char **argv)
 		ft_putstr_fd("Error\n", STDERR_FILENO);
 		exit(1);
 	}
-	fill_stack(stack_a, item_nb, temp_table);
+	fill_stack(&data->stack_a, item_nb, temp_table);
 	ft_free_array((void **)temp_table);
 }
 
