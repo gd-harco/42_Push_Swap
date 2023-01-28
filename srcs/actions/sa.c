@@ -6,12 +6,14 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 14:44:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/28 14:44:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/28 17:22:22 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//Swap the first 2 node of stack a.
+//Does nothing if a is empty or as only one node
 void	sa(t_stack **stack)
 {
 	t_stack	*node_one;
