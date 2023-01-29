@@ -6,11 +6,26 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:24:54 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/28 17:26:57 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/29 13:28:25 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_stack_size(t_stack *stack)
+{
+	int		i;
+	t_stack	*node;
+
+	i = 0;
+	node = stack;
+	while (node->next)
+	{
+		node = node->next;
+		i++;
+	}
+	return (i);
+}
 
 t_stack	*get_last_node(t_stack **stack)
 {

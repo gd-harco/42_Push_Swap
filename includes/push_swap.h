@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/28 18:27:08 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/29 11:18:00 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,16 @@ typedef struct s_push_swap
 	t_stack	*stack_b;
 }			t_push_swap;
 
-
-void		parse_nb(t_push_swap *data, int new_argc, char **argv);
+int			get_stack_size(t_stack *stack);
 char		*ft_strjoin_piscine(int size, char **strs, char *sep);
-void		stack_add_back(t_stack **stack, t_stack *new);
 t_stack		*stack_last(t_stack *stack);
 t_stack		*stack_new(size_t index, char *str);
 t_stack		*get_last_node(t_stack **stack);
 bool		have_duplicate(char **to_check);
 bool		have_non_digit(char **to_check);
 long long	ft_atoll(const char *str);
+void		parse_nb(t_push_swap *data, int new_argc, char **argv);
+void		stack_add_back(t_stack **stack, t_stack *new);
 void		sa(t_push_swap *data);
 void		sb(t_push_swap *data);
 void		ss(t_push_swap *data);

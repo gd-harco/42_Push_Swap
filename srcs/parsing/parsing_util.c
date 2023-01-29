@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:15:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/27 16:15:00 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/29 11:21:22 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ long long	ft_atoll(const char *str)
 	{
 		result = result * 10 + *str - '0';
 		if (result != (result * 10 + *str - '0') / 10)
-			return (LONG_LONG_MAX);
+			return (LLONG_MAX);
 	}
 	return (result * sign);
 }
