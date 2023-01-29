@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:24:20 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 13:25:46 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/29 16:45:21 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,5 @@ void	rra(t_push_swap *data)
 	data->stack_a = last_node;
 	last_node->next = first_node;
 	new_last->next = NULL;
+	ft_printf("rra\n");
 }

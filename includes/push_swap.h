@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 13:35:11 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/29 16:49:57 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ bool		have_non_digit(char **to_check);
 long long	ft_atoll(const char *str);
 void		parse_nb(t_push_swap *data, int new_argc, char **argv);
 void		stack_add_back(t_stack **stack, t_stack *new);
+void		index_stack(t_push_swap *data);
 void		sa(t_push_swap *data);
 void		sb(t_push_swap *data);
 void		ss(t_push_swap *data);
@@ -51,5 +52,5 @@ void		rb(t_push_swap *data);
 void		rr(t_push_swap *data);
 void		rra(t_push_swap *data);
 void		rrb(t_push_swap *data);
-
+void		rrr(t_push_swap *data);
 #endif

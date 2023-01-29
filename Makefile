@@ -25,6 +25,7 @@ HEADERS_LIST	=	push_swap.h
 SRCS_LIST		=	main.c	\
 					parsing/parsing_util.c	parsing/strjoin.c	\
 					parsing/parsing.c	parsing/error_handling.c	\
+					parsing/indexing.c \
 					actions/action_util.c	actions/pa.c		\
 					actions/pb.c	actions/ra.c	\
 					actions/sa.c	actions/sb.c	\
