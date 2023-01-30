@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 14:06:21 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 14:24:55 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/30 15:07:22 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ static int	get_index(t_stack *stack, int current_value)
 	}
 	return (index);
 }
-

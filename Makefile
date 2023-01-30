@@ -31,7 +31,8 @@ SRCS_LIST		=	main.c	\
 					actions/sa.c	actions/sb.c	\
 					actions/ss.c	actions/rb.c	\
 					actions/rr.c	actions/rra.c	\
-					actions/rrb.c	actions/rrr.c
+					actions/rrb.c	actions/rrr.c	\
+					sorting/sort_list.c
 
 HEADERS			=	${HEADERS_LIST:%.h=${DIR_HEADERS}%.h}
 
@@ -86,6 +87,7 @@ ${DIR_OBJS}		:
 					${MKDIR} ${DIR_OBJS}
 					${MKDIR} ${DIR_OBJS}/parsing
 					${MKDIR} ${DIR_OBJS}/actions
+					${MKDIR} ${DIR_OBJS}/sorting
 					@echo "\033[0;32m [${NAME}/bin] : ✔️ Successfully created bin directory\033[1;36m ${DIR_OBJS} !\033[0;00m"
 
 # ---- Usual Rules ---- #
