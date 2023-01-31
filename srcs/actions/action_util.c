@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 17:24:54 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 13:28:25 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/31 15:15:08 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_stack_size(t_stack *stack)
 
 	i = 0;
 	node = stack;
-	while (node->next)
+	while (node)
 	{
 		node = node->next;
 		i++;

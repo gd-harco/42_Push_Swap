@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:49:32 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/30 16:21:07 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/31 16:50:28 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,25 @@ static bool	is_sorted(t_stack *stack);
 
 void	sorting(t_push_swap *data)
 {
-	// int		bit_size;
+	int		bit_size;
 	int		current_bit;
-	t_stack	*top_stack_a;
-	t_stack	*top_stack_b;
 
-	// bit_size = (sizeof (int) * 8) - 1;
+	bit_size = (sizeof (int) * 8) - 1;
 	current_bit = 0;
-	while (!is_sorted(data->stack_a))
+	while (current_bit < bit_size)
 	{
-		top_stack_a = data->stack_a;
-		top_stack_b = data->stack_b;
-		while (top_stack_a)
+		if (is_sorted(data->stack_a))
+			return ;
+		data->size_a = get_stack_size(data->stack_a);
+		while (data->size_a)
 		{
-			if (top_stack_a->index << current_bit & 1)
-				pb(data);
-			else
+			if ((data->stack_a->index >> current_bit & 1))
 				ra(data);
+			else
+				pb(data);
+			data->size_a--;
 		}
-		while (top_stack_b)
+		while (data->stack_b)
 			pa(data);
 		current_bit++;
 	}
@@ -42,7 +42,7 @@ void	sorting(t_push_swap *data)
 
 static bool	is_sorted(t_stack *stack)
 {
-	while (stack)
+	while (stack->next)
 	{
 		if (stack->index > stack->next->index)
 			return (false);

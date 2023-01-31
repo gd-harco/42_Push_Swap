@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/30 16:18:14 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/31 12:20:16 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ typedef struct s_push_swap
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	int		size_a;
+	int		size_b;
 }			t_push_swap;
 
 int			get_stack_size(t_stack *stack);
