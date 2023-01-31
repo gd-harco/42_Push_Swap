@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/31 17:44:32 by gd-harco         ###   ########lyon.fr   */
+/*   Created: 2023/01/31 16:54:17 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/01/31 17:39:59 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_stack(t_stack *stack)
 {
-	t_push_swap	*data;
+	int		last_node;
+	int		stack_size;
+	t_stack	*free_node;
 
-	data = malloc(sizeof (t_push_swap));
-	parse_nb(data, argc - 1, &argv[1]);
-	data->stack_b = NULL;
-	index_stack(data);
-	sorting(data);
-	free_stack(data->stack_a);
-	free(data);
-	return (0);
+	stack_size = get_stack_size(stack) - 1;
+	while (stack_size >= 0)
+	{
+		free_node = stack;
+		last_node = stack_size;
+		while (last_node--)
+			free_node = free_node->next;
+		free(free_node);
+		stack_size--;
+	}
 }

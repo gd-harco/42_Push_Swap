@@ -22,7 +22,7 @@ LIBFT            =   libft/libft.a
 
 HEADERS_LIST	=	push_swap.h
 
-SRCS_LIST		=	main.c	\
+SRCS_LIST		=	main.c	free_stack.c	\
 					parsing/parsing_util.c	parsing/strjoin.c	\
 					parsing/parsing.c	parsing/error_handling.c	\
 					parsing/indexing.c \

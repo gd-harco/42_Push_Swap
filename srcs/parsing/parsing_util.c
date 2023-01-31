@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 16:15:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 11:21:22 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/01/31 18:02:47 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_stack	*stack_new(size_t index, char *str)
 	t_stack	*node;
 	long	overflow_check;
 
-	overflow_check = ft_atoi(str);
+	overflow_check = ft_atoll(str);
 	if (overflow_check > INT_MAX || overflow_check < INT_MIN)
 	{
 		ft_putstr_fd("Error\n", 2);
@@ -70,11 +70,12 @@ long long	ft_atoll(const char *str)
 			sign = -1;
 		str++;
 	}
-	while (*str >= '0' && *str++ <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + *str - '0';
 		if (result != (result * 10 + *str - '0') / 10)
 			return (LLONG_MAX);
+		str++;
 	}
 	return (result * sign);
 }
