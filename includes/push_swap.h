@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/31 17:01:54 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/02/07 16:14:56 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		rra(t_push_swap *data);
 void		rrb(t_push_swap *data);
 void		rrr(t_push_swap *data);
 void		sorting(t_push_swap *data);
+void		sorting_small(t_push_swap *data);
 void		free_stack(t_stack *stack);
 
 #endif
