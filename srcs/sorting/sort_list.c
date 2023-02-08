@@ -12,6 +12,9 @@
 
 #include "push_swap.h"
 
+static void	push_index_to_b(t_push_swap *data, size_t index);
+static void	sort_stack_four_five(t_push_swap *data);
+static void	sort_stack_three(t_push_swap *data);
 static bool	is_sorted(t_stack *stack);
 
 void	sorting(t_push_swap *data)
@@ -48,9 +51,49 @@ void	sort_small(t_push_swap *data)
 			sa(data);
 	}
 	else if (data->size_a == 3)
+		sort_stack_three(data);
+	else
+		sort_stack_four_five(data);
+}
+
+static void	sort_stack_three(t_push_swap *data)
+{
+	if (data->stack_a->index >)
 	{
-		²
+		ra(data);
+		if (!is_sorted(data->stack_a))
+			sa(data);
 	}
+	else if (data->stack_a->index == 1)
+	{
+		if (data->stack_a->next->index == 2)
+			rra(data);
+		else
+			sa(data);
+	}
+	else
+	{
+		rra(data);
+		sa(data);
+	}
+}
+
+static void	sort_stack_four_five(t_push_swap *data)
+{
+	push_index_to_b(data, 0);
+	if (data->size_a == 5)
+		push_index_to_b(data, 1);
+	sort_stack_three(data);
+	pa(data);
+	if (data->size_a == 5)
+		pa(data);
+}
+
+static void	push_index_to_b(t_push_swap *data, size_t index)
+{
+	while(data->stack_a->index != index)
+		ra(data);
+	pb(data);
 }
 
 static bool	is_sorted(t_stack *stack)

@@ -56,7 +56,7 @@ void		rra(t_push_swap *data);
 void		rrb(t_push_swap *data);
 void		rrr(t_push_swap *data);
 void		sorting(t_push_swap *data);
-void		sorting_small(t_push_swap *data);
+void		sort_small(t_push_swap *data);
 void		free_stack(t_stack *stack);
 
 #endif

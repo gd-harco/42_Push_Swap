@@ -16,12 +16,17 @@ int	main(int argc, char **argv)
 {
 	t_push_swap	*data;
 
+	if (argc == 1)
+	{
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+		return (1);
+	}
 	data = malloc(sizeof (t_push_swap));
 	parse_nb(data, argc - 1, &argv[1]);
 	data->stack_b = NULL;
 	index_stack(data);
-	if (get_stack_size(data->stack_a) <= 5)
-		sorting_small(data);
+	if (data->size_a <= 5)
+		sort_small(data);
 	else
 		sorting(data);
 	free_stack(data->stack_a);

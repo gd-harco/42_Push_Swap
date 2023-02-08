@@ -24,6 +24,7 @@ void	index_stack(t_push_swap *data)
 		current->index = get_index (data->stack_a, current->value);
 		current = current->next;
 	}
+	data->size_a = get_stack_size(data->stack_a);
 }
 
 static int	get_index(t_stack *stack, int current_value)
