@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 17:05:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/01/29 16:11:36 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 13:58:59 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ bool	have_non_digit(char **to_check)
 		cur_char = 0;
 		while (to_check[index][cur_char])
 		{
-			if (to_check[index][cur_char] == '-'
-					|| to_check[index][cur_char] == '+')
+			if ((to_check[index][cur_char] == '-'
+				&& ft_isdigit(to_check[index][cur_char + 1]) == 0)
+					|| (to_check[index][cur_char] == '+'
+					&& ft_isdigit(to_check[index][cur_char + 1]) == 0))
 				cur_char++;
 			else if (ft_isdigit(to_check[index][cur_char]) == 0)
 				return (true);

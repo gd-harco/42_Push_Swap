@@ -32,7 +32,7 @@ SRCS_LIST		=	main.c	free_stack.c	\
 					actions/ss.c	actions/rb.c	\
 					actions/rr.c	actions/rra.c	\
 					actions/rrb.c	actions/rrr.c	\
-					sorting/sort_list.c
+					sorting/sort_list.c	sorting/sort_util.c
 
 HEADERS			=	${HEADERS_LIST:%.h=${DIR_HEADERS}%.h}
 

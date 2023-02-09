@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/02/07 16:14:56 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 13:48:34 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ t_stack		*stack_new(size_t index, char *str);
 t_stack		*get_last_node(t_stack **stack);
 bool		have_duplicate(char **to_check);
 bool		have_non_digit(char **to_check);
+bool		is_sorted(t_stack *stack);
 long long	ft_atoll(const char *str);
 void		parse_nb(t_push_swap *data, int new_argc, char **argv);
 void		stack_add_back(t_stack **stack, t_stack *new);

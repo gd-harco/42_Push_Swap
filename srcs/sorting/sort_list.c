@@ -6,7 +6,7 @@
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 14:49:32 by gd-harco          #+#    #+#             */
-/*   Updated: 2023/02/07 19:28:10 by gd-harco         ###   ########lyon.fr   */
+/*   Updated: 2023/02/09 13:47:42 by gd-harco         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 static void	push_index_to_b(t_push_swap *data, size_t index);
 static void	sort_stack_four_five(t_push_swap *data);
-static void	sort_stack_three(t_push_swap *data);
-static bool	is_sorted(t_stack *stack);
+static void	sort_stack_three(t_push_swap *data, int shift);
 
 void	sorting(t_push_swap *data)
 {
@@ -51,22 +50,22 @@ void	sort_small(t_push_swap *data)
 			sa(data);
 	}
 	else if (data->size_a == 3)
-		sort_stack_three(data);
+		sort_stack_three(data, 0);
 	else
 		sort_stack_four_five(data);
 }
 
-static void	sort_stack_three(t_push_swap *data)
+static void	sort_stack_three(t_push_swap *data, int shift)
 {
-	if (data->stack_a->index >)
+	if (data->stack_a->index + shift == 0)
 	{
 		ra(data);
 		if (!is_sorted(data->stack_a))
 			sa(data);
 	}
-	else if (data->stack_a->index == 1)
+	else if (data->stack_a->index + shift == 1)
 	{
-		if (data->stack_a->next->index == 2)
+		if (data->stack_a->next->index + shift == 2)
 			rra(data);
 		else
 			sa(data);
@@ -80,10 +79,16 @@ static void	sort_stack_three(t_push_swap *data)
 
 static void	sort_stack_four_five(t_push_swap *data)
 {
+	int	shift;
+
+	shift = 1;
 	push_index_to_b(data, 0);
 	if (data->size_a == 5)
+	{
 		push_index_to_b(data, 1);
-	sort_stack_three(data);
+		shift++;
+	}
+	sort_stack_three(data, shift);
 	pa(data);
 	if (data->size_a == 5)
 		pa(data);
@@ -91,18 +96,7 @@ static void	sort_stack_four_five(t_push_swap *data)
 
 static void	push_index_to_b(t_push_swap *data, size_t index)
 {
-	while(data->stack_a->index != index)
+	while (data->stack_a->index != index)
 		ra(data);
 	pb(data);
-}
-
-static bool	is_sorted(t_stack *stack)
-{
-	while (stack->next)
-	{
-		if (stack->index > stack->next->index)
-			return (false);
-		stack = stack->next;
-	}
-	return (true);
 }
