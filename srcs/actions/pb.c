@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   pb.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.42lyon.f>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 10:46:31 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/02/10 10:46:31 by gd-harco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   pb.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/28 16:56:21 by gd-harco          #+#    #+#             */
@@ -26,5 +38,8 @@ void	pb(t_push_swap *data)
 	data->stack_a = first_node_a->next;
 	first_node_a->next = first_node_b;
 	data->stack_b = first_node_a;
+	data->size_a = get_stack_size(data->stack_a);
+	data->size_b = get_stack_size(data->stack_b);
 	ft_printf("pb\n");
 }
+

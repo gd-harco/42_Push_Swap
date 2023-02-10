@@ -20,21 +20,21 @@ void	sorting(t_push_swap *data)
 {
 	int		bit_size;
 	int		current_bit;
+	size_t	count;
 
 	bit_size = (sizeof (int) * 8) - 1;
 	current_bit = 0;
 	while (current_bit < bit_size)
 	{
+		count = data->size_a;
 		if (is_sorted(data->stack_a))
 			return ;
-		data->size_a = get_stack_size(data->stack_a);
-		while (data->size_a)
+		while (count--)
 		{
 			if ((data->stack_a->index >> current_bit & 1))
 				ra(data);
 			else
 				pb(data);
-			data->size_a--;
 		}
 		while (data->stack_b)
 			pa(data);
@@ -57,14 +57,14 @@ void	sort_small(t_push_swap *data)
 
 static void	sort_stack_three(t_push_swap *data, int shift)
 {
-	if (data->stack_a->index + shift == 0)
+	if (data->stack_a->index - shift == 0)
 	{
 		rra(data);
 		sa(data);
 	}
-	else if (data->stack_a->index + shift == 1)
+	else if (data->stack_a->index - shift == 1)
 	{
-		if (data->stack_a->next->index + shift == 2)
+		if (data->stack_a->next->index - shift == 2)
 			rra(data);
 		else
 			sa(data);
