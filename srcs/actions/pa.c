@@ -26,5 +26,7 @@ void	pa(t_push_swap *data)
 	data->stack_b = first_node_b->next;
 	first_node_b->next = first_node_a;
 	data->stack_a = first_node_b;
+	data->size_a = get_stack_size(data->stack_a);
+	data->size_b = get_stack_size(data->stack_b);
 	ft_printf("pa\n");
 }
