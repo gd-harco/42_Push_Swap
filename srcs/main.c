@@ -27,13 +27,10 @@ int	main(int argc, char **argv)
 	index_stack(data);
 	if (!is_sorted(data->stack_a))
 	{
-		if (data->size_a != 1)
-		{
-			if (data->size_a <= 5)
-				sort_small(data);
-			else
-				sorting(data);
-		}
+		if (data->size_a <= 5)
+			sort_small(data);
+		else
+			sorting(data);
 	}
 	free_stack(data->stack_a);
 	free(data);

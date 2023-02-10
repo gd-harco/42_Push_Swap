@@ -59,9 +59,8 @@ static void	sort_stack_three(t_push_swap *data, int shift)
 {
 	if (data->stack_a->index + shift == 0)
 	{
-		ra(data);
-		if (!is_sorted(data->stack_a))
-			sa(data);
+		rra(data);
+		sa(data);
 	}
 	else if (data->stack_a->index + shift == 1)
 	{

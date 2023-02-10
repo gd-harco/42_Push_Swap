@@ -23,7 +23,7 @@ void	rra(t_push_swap *data)
 
 	if (data->stack_a == NULL)
 		return ;
-	size = get_stack_size(data->stack_a) - 1;
+	size = data->size_a - 2;
 	last_node = get_last_node(&data->stack_a);
 	first_node = data->stack_a;
 	new_last = first_node;
