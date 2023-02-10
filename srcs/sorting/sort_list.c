@@ -99,7 +99,22 @@ static void	sort_stack_four_five(t_push_swap *data)
 
 static void	push_index_to_b(t_push_swap *data, size_t index)
 {
+	int	index_position;
+	t_stack *current_node;
+
+	current_node = data->stack_a;
+	index_position = 0;
+	while (current_node->index != index)
+	{
+		current_node = current_node->next;
+		index_position++;
+	}
 	while (data->stack_a->index != index)
-		ra(data);
+	{
+		if (index_position <= 2 )
+			ra(data);
+		else
+			rra(data);
+	}
 	pb(data);
 }
