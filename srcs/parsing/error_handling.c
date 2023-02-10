@@ -61,9 +61,9 @@ bool	have_non_digit(char **to_check)
 		while (to_check[index][cur_char])
 		{
 			if ((to_check[index][cur_char] == '-'
-				&& ft_isdigit(to_check[index][cur_char + 1]) == 0)
+				&& ft_isdigit(to_check[index][cur_char + 1]))
 					|| (to_check[index][cur_char] == '+'
-					&& ft_isdigit(to_check[index][cur_char + 1]) == 0))
+					&& ft_isdigit(to_check[index][cur_char + 1])))
 				cur_char++;
 			else if (ft_isdigit(to_check[index][cur_char]) == 0)
 				return (true);
