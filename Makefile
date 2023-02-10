@@ -28,10 +28,7 @@ SRCS_LIST		=	main.c	free_stack.c	\
 					parsing/indexing.c \
 					actions/action_util.c	actions/pa.c		\
 					actions/pb.c	actions/ra.c	\
-					actions/sa.c	actions/sb.c	\
-					actions/ss.c	actions/rb.c	\
-					actions/rr.c	actions/rra.c	\
-					actions/rrb.c	actions/rrr.c	\
+					actions/sa.c	actions/rra.c	\
 					sorting/sort_list.c	sorting/sort_util.c
 
 HEADERS			=	${HEADERS_LIST:%.h=${DIR_HEADERS}%.h}
