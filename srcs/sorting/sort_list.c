@@ -80,17 +80,20 @@ static void	sort_stack_three(t_push_swap *data, int shift)
 static void	sort_stack_four_five(t_push_swap *data)
 {
 	int	shift;
+	int	size;
 
+	size = data->size_a;
 	shift = 1;
 	push_index_to_b(data, 0);
-	if (data->size_a == 5)
+	if (size == 5)
 	{
 		push_index_to_b(data, 1);
 		shift++;
 	}
-	sort_stack_three(data, shift);
+	if(!is_sorted(data->stack_a))
+		sort_stack_three(data, shift);
 	pa(data);
-	if (data->size_a == 5)
+	if (size == 5)
 		pa(data);
 }
 
