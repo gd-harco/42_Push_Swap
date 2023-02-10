@@ -21,11 +21,14 @@ void	parse_nb(t_push_swap *data, int new_argc, char **argv)
 	size_t	item_nb;
 
 	data->stack_a = NULL;
-	temp = ft_strjoin_piscine(new_argc, argv, " ");
+	temp = strjoin(new_argc, argv, " ");
 	temp_table = ft_split(temp, ' ');
 	free(temp);
 	item_nb = ft_array_length((void **)temp_table);
-	if (have_duplicate(temp_table) || have_non_digit(temp_table))
+	if (have_duplicate(temp_table)
+		|| have_non_digit(temp_table)
+		|| have_weird_str(temp_table)
+		|| *temp_table == NULL)
 	{
 		ft_free_array((void **)temp_table);
 		ft_putstr_fd("Error\n", STDERR_FILENO);

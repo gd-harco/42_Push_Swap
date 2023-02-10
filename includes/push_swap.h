@@ -3,6 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.42lyon.f>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 13:31:49 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/02/10 13:31:49 by gd-harco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.42lyon.f>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/10 13:31:37 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/02/10 13:31:37 by gd-harco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:22:00 by gd-harco          #+#    #+#             */
@@ -13,8 +37,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/includes/libft.h"
-# include <stdbool.h>
-# include <limits.h>
 
 typedef struct s_stack	t_stack;
 
@@ -34,12 +56,14 @@ typedef struct s_push_swap
 }			t_push_swap;
 
 int			get_stack_size(t_stack *stack);
-char		*ft_strjoin_piscine(int size, char **strs, char *sep);
+char		*strjoin(int size, char **strs, char *sep);
 t_stack		*stack_last(t_stack *stack);
 t_stack		*stack_new(size_t index, char *str);
 t_stack		*get_last_node(t_stack **stack);
 bool		have_duplicate(char **to_check);
 bool		have_non_digit(char **to_check);
+bool		have_weird_str(char **to_check);
+bool		have_empty_string(char **to_check);
 bool		is_sorted(t_stack *stack);
 long long	ft_atoll(const char *str);
 void		parse_nb(t_push_swap *data, int new_argc, char **argv);

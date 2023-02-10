@@ -76,7 +76,7 @@ int	get_strs_size(size_t size, char **strs)
 	return (result);
 }
 
-char	*ft_strjoin_piscine(int size, char **strs, char *sep)
+char	*strjoin(int size, char **strs, char *sep)
 {
 	char	*joined;
 

@@ -90,7 +90,7 @@ static void	sort_stack_four_five(t_push_swap *data)
 		push_index_to_b(data, 1);
 		shift++;
 	}
-	if(!is_sorted(data->stack_a))
+	if (!is_sorted(data->stack_a))
 		sort_stack_three(data, shift);
 	pa(data);
 	if (size == 5)
@@ -99,8 +99,8 @@ static void	sort_stack_four_five(t_push_swap *data)
 
 static void	push_index_to_b(t_push_swap *data, size_t index)
 {
-	int	index_position;
-	t_stack *current_node;
+	int		index_position;
+	t_stack	*current_node;
 
 	current_node = data->stack_a;
 	index_position = 0;
@@ -111,7 +111,7 @@ static void	push_index_to_b(t_push_swap *data, size_t index)
 	}
 	while (data->stack_a->index != index)
 	{
-		if (index_position <= 2 )
+		if (index_position <= 2)
 			ra(data);
 		else
 			rra(data);

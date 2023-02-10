@@ -42,4 +42,3 @@ void	pb(t_push_swap *data)
 	data->size_b = get_stack_size(data->stack_b);
 	ft_printf("pb\n");
 }
-
