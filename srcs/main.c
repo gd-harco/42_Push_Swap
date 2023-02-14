@@ -14,22 +14,20 @@
 
 int	main(int argc, char **argv)
 {
-	t_push_swap	*data;
+	t_push_swap	data;
 
 	if (argc == 1)
 		return (1);
-	data = malloc(sizeof (t_push_swap));
-	parse_nb(data, argc - 1, &argv[1]);
-	data->stack_b = NULL;
-	index_stack(data);
-	if (!is_sorted(data->stack_a))
+	parse_nb(&data, argc - 1, &argv[1]);
+	data.stack_b = NULL;
+	index_stack(&data);
+	if (!is_sorted(data.stack_a))
 	{
-		if (data->size_a <= 5)
-			sort_small(data);
+		if (data.size_a <= 5)
+			sort_small(&data);
 		else
-			sorting(data);
+			sorting(&data);
 	}
-	free_stack(data->stack_a);
-	free(data);
+	free_stack(data.stack_a);
 	return (0);
 }
