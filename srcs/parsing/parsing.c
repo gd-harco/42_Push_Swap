@@ -3,6 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+/*   By: gd-harco <gd-harco@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/18 10:32:59 by gd-harco          #+#    #+#             */
+/*   Updated: 2023/02/18 10:32:59 by gd-harco         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
 /*   By: gd-harco <gd-harco@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:13:00 by gd-harco          #+#    #+#             */
@@ -47,6 +59,11 @@ static void	fill_stack(t_stack **stack, size_t item_nb, char **table)
 	while (i < item_nb)
 	{
 		new_node = stack_new(i + 1, table[i]);
+		if (new_node == NULL)
+		{
+			ft_free_split(table);
+			exit (1);
+		}
 		stack_add_back(stack, new_node);
 		i++;
 	}

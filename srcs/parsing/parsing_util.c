@@ -21,7 +21,7 @@ t_stack	*stack_new(size_t index, char *str)
 	if (overflow_check > INT_MAX || overflow_check < INT_MIN)
 	{
 		ft_putstr_fd("Error\n", 2);
-		exit (1);
+		return (NULL);
 	}
 	node = malloc(sizeof (t_stack));
 	node->index = index;
