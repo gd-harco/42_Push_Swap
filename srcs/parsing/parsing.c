@@ -62,6 +62,7 @@ static void	fill_stack(t_stack **stack, size_t item_nb, char **table)
 		if (new_node == NULL)
 		{
 			ft_free_split(table);
+			free_stack(*stack);
 			exit (1);
 		}
 		stack_add_back(stack, new_node);
